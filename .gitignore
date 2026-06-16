@@ -1,2 +1,6 @@
-todos.txt
-sniffer
+# Visual Studio
+.vs/
+
+# Build results
+[Bb]in/
+[Oo]bj/
