@@ -1,8 +1,9 @@
 CXX ?= g++
 CXXFLAGS ?= -g -std=c++17
+CPPFLAGS ?= -I./include
 WARNFLAGS ?= -Wall -Wextra
 
-SRC := ./cpp/raw_sniffer.cpp
+SRC := $(wildcard ./cpp/*.cpp)
 BIN := ./sniffer
 IFACE ?= wlp0s20f3
 PROTO ?= tcp
@@ -12,10 +13,10 @@ PROTO ?= tcp
 all: build
 
 build:
-	$(CXX) -o $(BIN) $(SRC) $(CXXFLAGS)
+	$(CXX) -o $(BIN) $(SRC) $(CPPFLAGS) $(CXXFLAGS)
 
 check:
-	$(CXX) -o /tmp/sniffer-check $(SRC) $(CXXFLAGS) $(WARNFLAGS)
+	$(CXX) -o /tmp/sniffer-check $(SRC) $(CPPFLAGS) $(CXXFLAGS) $(WARNFLAGS)
 
 usage: build
 	-$(BIN)
