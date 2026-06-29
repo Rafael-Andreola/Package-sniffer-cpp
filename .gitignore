@@ -4,3 +4,6 @@
 # Build results
 [Bb]in/
 [Oo]bj/
+
+legacy/sniff_logger.txt
+legacy/sniffer
